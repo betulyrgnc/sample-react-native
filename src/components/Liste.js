@@ -15,7 +15,7 @@ class Liste extends Component {
 
     renderData() {
       return this.state.data.map((responseData, Id) =>
-      <Detay key={Id} data={responseData}/> {responseData.title}
+      <Detay key={Id} data={responseData} />
       );
       }
 
