@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 const Detay = ({ data }) => {
-  const { containerStyle, subContainerStyle } = styles;
+  const { containerStyle, subContainerStyle, ImageStyle } = styles;
   return (
     <View style={containerStyle}>
       <View style={subContainerStyle}>
@@ -10,7 +10,7 @@ const Detay = ({ data }) => {
       </View>
 
       <View style={subContainerStyle}>
-
+        <Image style={ImageStyle} source={{ uri: data.image }} />
       </View>
 
       <View style={subContainerStyle}>
@@ -26,7 +26,7 @@ const styles = {
     borderRadius: 2,
     borderColor: '#ddd',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height:2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 1,
@@ -36,14 +36,17 @@ const styles = {
 
   },
   subContainerStyle: {
-    borderBottomWidth: 1,
-    padding: 5,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start',
-    flextDirection: 'row',
-    borderColor: '#ddd',
-    position: 'relative'
-  }
-
+  borderBottomWidth: 1,
+  padding: 5,
+  backgroundColor: '#fff',
+  justifyContent: 'flex-start',
+  flextDirection: 'row',
+  borderColor: '#ddd',
+  position: 'relative',
+},
+ImageStyle: {
+  height: 300,
+  flex: 1
+}
 };
 export default Detay;
