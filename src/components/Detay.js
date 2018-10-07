@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
+import Button from './Button';
 
 const Detay = ({ data }) => {
   const { containerStyle, subContainerStyle, ImageStyle } = styles;
@@ -14,7 +15,7 @@ const Detay = ({ data }) => {
       </View>
 
       <View style={subContainerStyle}>
-
+        <Button onPress={() => console.log('Tıklandı!')}> SATIN AL </Button>
       </View>
 
     </View>
