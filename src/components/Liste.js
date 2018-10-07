@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import axios from 'axios';
-
+import Detay from './Detay';
 class Liste extends Component {
     state = { data: [] };
     componentWillMount() {
@@ -14,8 +14,8 @@ class Liste extends Component {
     }
 
     renderData() {
-      return this.state.data.map(responseData =>
-      <Text> {responseData.title} </Text>
+      return this.state.data.map((responseData, Id) =>
+      <Detay key={Id} data={responseData}/> {responseData.title}
       );
       }
 
