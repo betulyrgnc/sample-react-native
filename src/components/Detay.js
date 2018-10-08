@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Button from './Button';
 
 const Detay = ({ data }) => {
-  const { containerStyle, subContainerStyle, ImageStyle } = styles;
+  const { containerStyle, subContainerStyle, ImageStyle, titleStyle } = styles;
   return (
     <View style={containerStyle}>
       <View style={subContainerStyle}>
-        <Text> {data.title} </Text>
+        <Text style={titleStyle}> {data.title} </Text>
       </View>
 
       <View style={subContainerStyle}>
@@ -15,7 +15,7 @@ const Detay = ({ data }) => {
       </View>
 
       <View style={subContainerStyle}>
-        <Button onPress={() => console.log('Tıklandı!')}> SATIN AL </Button>
+        <Button onPress={() => Linking.openURL(data.url)}> SATIN AL </Button>
       </View>
 
     </View>
@@ -41,13 +41,17 @@ const styles = {
   padding: 5,
   backgroundColor: '#fff',
   justifyContent: 'flex-start',
-  flextDirection: 'row',
+  flexDirection: 'row',
   borderColor: '#ddd',
   position: 'relative',
-},
-ImageStyle: {
-  height: 300,
-  flex: 1
-}
+  },
+  ImageStyle: {
+    height: 300,
+    flex: 1
+  },
+  titleStyle: {
+    fontSize: 18
+  }
+
 };
 export default Detay;
